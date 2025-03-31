@@ -10,7 +10,14 @@ const productController = {
         });
     },
     agregar: function(req, res) {
-        res.render('agregar', { title: 'Agregar producto' });
+        res.render('product-add', { title: 'Agregar producto' });
+    },
+    search: function(req, res) {
+        const search = req.query.search;
+        return res.render('search-results', { 
+            title: 'Resultados de búsqueda',
+            search: search
+        });
     }
 };
 

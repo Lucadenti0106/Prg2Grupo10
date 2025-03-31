@@ -6,7 +6,7 @@ const userController = {
         res.render('register', { title: 'Registro' });
     },
     perfil: function(req, res) {
-        res.render('perfil', { title: 'Mi perfil' });
+        res.render('profile', { title: 'Mi perfil' });
     }
 };
 
