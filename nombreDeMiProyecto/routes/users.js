@@ -1,6 +1,6 @@
-var express = require('express');
-var router = express.Router();
-var userController = require('../controllers/usercontroller');
+let express = require('express');
+let router = express.Router();
+let userController = require('../controllers/usercontroller');
 
 /* User routes */
 router.get('/login', userController.login);
