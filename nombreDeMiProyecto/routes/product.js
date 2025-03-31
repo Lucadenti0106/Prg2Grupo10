@@ -4,8 +4,7 @@ var productController = require('../controllers/productcontroller');
 
 /* Product routes */
 router.get('/', productController.index);
-router.get('/detail/:id', productController.detail);
-router.get('/add', productController.add);
-router.post('/add', productController.processAdd);
+router.get('/detalle/:id', productController.detalle);
+router.get('/agregar', productController.agregar);
 
 module.exports = router;

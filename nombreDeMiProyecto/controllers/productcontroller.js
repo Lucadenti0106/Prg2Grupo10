@@ -10,7 +10,7 @@ const productController = {
         });
     },
     agregar: function(req, res) {
-        res.render('product-add', { title: 'Agregar producto' });
+        res.render('agregar', { title: 'Agregar producto' });
     }
 };
 
