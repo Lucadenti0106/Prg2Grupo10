@@ -1,6 +1,6 @@
 const mainController = {
     index: function(req, res) {
-        return res.render('index', { title: 'Mercado Liebre Argentina' });
+        return res.render('index.ejs');
     }
 
 };

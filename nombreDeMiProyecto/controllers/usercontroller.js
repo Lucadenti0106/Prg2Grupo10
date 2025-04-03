@@ -1,12 +1,12 @@
 const userController = {
     login: function(req, res) {
-        res.render('login', { title: 'Ingresar' });
+        res.render('login.ejs');
     },
     register: function(req, res) {
-        res.render('register', { title: 'Registro' });
+        res.render('register.ejs');
     },
     perfil: function(req, res) {
-        res.render('profile', { title: 'Mi perfil' });
+        res.render('profile.ejs');
     }
 };
 
