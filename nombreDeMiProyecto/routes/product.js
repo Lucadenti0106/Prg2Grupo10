@@ -3,8 +3,8 @@ const router = express.Router();
 const productController = require("../controllers/productController")
 
 /* Product routes */
-router.get('/', productController.product);
-router.get('/agregar', productController.agregar);
+router.get('/product', productController.product);
+router.get('/product/product-add', productController.agregar);
 
 
 

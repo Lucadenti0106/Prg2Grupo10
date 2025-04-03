@@ -5,11 +5,11 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
 // Importar todas las rutas
-const indexRouter = require('./routes/index');
-const userRouter = require('./routes/user');
-const productRouter = require('./routes/product');
+let indexRouter = require('./routes/index');
+let userRouter = require('./routes/user');
+let productRouter = require('./routes/product');
 
-const app = express();
+var app = express();
 
 
 app.set('views', path.join(__dirname, 'views'));
@@ -23,8 +23,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Rutas
 app.use('/', indexRouter);
-app.use('/user', userRouter);
-app.use('/product', productRouter);
+app.use('/', userRouter);
+app.use('/', productRouter);
 
 // Error 404
 app.use(function(req, res, next) {
