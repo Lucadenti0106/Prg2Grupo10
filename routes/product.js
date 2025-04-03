@@ -4,7 +4,7 @@ const productController = require("../controllers/productController")
 
 /* GET home page. */
 router.get('/product', productController.product);
-router.get('/agregar', productController.agregar);
+router.get('/product-add', productController.agregar);
 
 
 module.exports = router;
