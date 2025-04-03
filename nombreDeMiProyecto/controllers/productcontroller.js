@@ -1,8 +1,14 @@
-const express = require("express")
-const router = express.Router()
+
 const productController = {
-    index: function(req, res) {
+
+    login: function (req, res) {
+        res.render('login.ejs');
+    },
+    product: function (req, res) {
         res.render('product.ejs');
+    },
+    agregar: function (req, res) {
+        res.render('product-add.ejs');
     }
 };
 
