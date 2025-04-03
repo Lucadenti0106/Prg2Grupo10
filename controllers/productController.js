@@ -1,7 +1,8 @@
 
 const productController = {
-    product: (req, res) => {
-        res.render("product");
+    mostrarProducto: (req, res) => {
+        let producto = req.params.id
+        res.render(producto)
     },
     agregar: (req, res) => {
         res.render("product-add");
