@@ -6,7 +6,7 @@ const logger = require('morgan');
 
 // Importar todas las rutas
 const indexRouter = require('./routes/index');
-const usersRouter = require('./routes/users');
+const userRouter = require('./routes/user');
 const productRouter = require('./routes/product');
 
 const app = express();
@@ -23,7 +23,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Rutas
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/user', userRouter);
 app.use('/product', productRouter);
 
 // Error 404
