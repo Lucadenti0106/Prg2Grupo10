@@ -1,9 +1,9 @@
 let express = require('express');
 let router = express.Router();
-let productController = require('../controllers/productController');
+const productController = require("../controllers/productController")
 
 /* Product routes */
-router.get('/', productController.index);
+router.get('/', productController.product);
 router.get('/agregar', productController.agregar);
 
 
