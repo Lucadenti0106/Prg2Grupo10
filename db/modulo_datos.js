@@ -12,9 +12,9 @@ const moduloDatos = {
     productos: [
         {
             id: 1,
-            nombre: "Smartphone XYZ",
-            descripcion: "El último modelo con cámara de alta resolución y batería de larga duración",
-            imagen: "../public/images/products/default-image.png",
+            nombre: "Cafetera moulinex",
+            descripcion: "Cafetera de especialidad",
+            imagen: "/images/products/img-cafetera-moulinex.jpg",
             comentarios: [
                 {
                     usuario: "usuario1",
@@ -32,7 +32,7 @@ const moduloDatos = {
             id: 2,
             nombre: "Auriculares inalámbricos ABC",
             descripcion: "Con cancelación de ruido y hasta 20 horas de batería",
-            imagen: "../public/images/products/default-image.png",
+            imagen: "/images/products/img-cafetera-moulinex.jpg",            
             comentarios: [
                 {
                     usuario: "usuario3",
@@ -50,7 +50,7 @@ const moduloDatos = {
             id: 3,
             nombre: "Notebook Ultra 15",
             descripcion: "Ligera y potente, ideal para estudiantes y profesionales",
-            imagen: "../public/images/products/default-image.png",
+            imagen: "/images/products/img-cafetera-moulinex.jpg",            
             comentarios: [
                 {
                     usuario: "usuario4",
@@ -68,7 +68,7 @@ const moduloDatos = {
             id: 4,
             nombre: "Smartwatch FitLife",
             descripcion: "Controla tu actividad diaria y monitorea tu salud",
-            imagen: "../public/images/products/default-image.png",
+            imagen: "/images/products/img-cafetera-moulinex.jpg",            
             comentarios: [
                 {
                     usuario: "usuario5",
@@ -86,7 +86,7 @@ const moduloDatos = {
             id: 5,
             nombre: "Cámara deportiva 4K",
             descripcion: "Ideal para aventuras extremas y grabaciones en movimiento",
-            imagen: "../public/images/products/default-image.png",
+            imagen: "/images/products/img-cafetera-moulinex.jpg",            
             comentarios: [
                 {
                     usuario: "usuario6",
@@ -104,7 +104,7 @@ const moduloDatos = {
             id: 6,
             nombre: "Tablet Pro 11",
             descripcion: "Pantalla brillante y alto rendimiento para multitareas",
-            imagen: "../public/images/products/default-image.png",
+            imagen: "/images/products/img-cafetera-moulinex.jpg",            
             comentarios: [
                 {
                     usuario: "usuario4",
@@ -122,7 +122,7 @@ const moduloDatos = {
             id: 7,
             nombre: "Teclado mecánico RGB",
             descripcion: "Diseñado para gamers, con retroiluminación personalizable",
-            imagen: "../public/images/products/default-image.png",
+            imagen: "/images/products/img-cafetera-moulinex.jpg",            
             comentarios: [
                 {
                     usuario: "usuario8",
@@ -140,7 +140,7 @@ const moduloDatos = {
             id: 8,
             nombre: "Monitor 27'' 2K",
             descripcion: "Colores vivos y resolución perfecta para diseño gráfico",
-            imagen: "../public/images/products/default-image.png",
+            imagen: "/images/products/img-cafetera-moulinex.jpg",            
             comentarios: [
                 {
                     usuario: "usuario9",
@@ -158,7 +158,7 @@ const moduloDatos = {
             id: 9,
             nombre: "Mouse ergonómico inalámbrico",
             descripcion: "Diseñado para largas horas de trabajo sin molestias",
-            imagen: "../public/images/products/default-image.png",
+            imagen: "/images/products/img-cafetera-moulinex.jpg",            
             comentarios: [
                 {
                     usuario: "usuario3",
@@ -176,7 +176,7 @@ const moduloDatos = {
             id: 10,
             nombre: "Cargador rápido USB-C",
             descripcion: "Carga tu teléfono al 100% en menos de una hora",
-            imagen: "../public/images/products/default-image.png",
+            imagen: "/images/products/img-cafetera-moulinex.jpg",            
             comentarios: [
                 {
                     usuario: "usuario10",
