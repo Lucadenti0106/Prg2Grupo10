@@ -29,12 +29,12 @@
         <nav class="main-navbar">
             <ul class="left-navbar">
                 <li><a href="/">Todos los productos</a></li>
-                <!-- solo logueado <li><a href="/product-add">Cargar productos</a></li> -->
+                <li><a href="/product-add">Cargar productos</a></li>
             </ul>
     
             <ul class="right-navbar">
-                <!-- Solo logueado <li><a href="/profile">
-                        Nombre del usuario <i class="fas fa-user"></i>
+                <li><a href="/profile">
+                        <%= usuario.nombre %> <i class="fas fa-user"></i>
                     </a>
                 </li>
                 <li>
@@ -43,12 +43,6 @@
                             Cerrar sesión <i class="fas fa-sign-in-alt"></i>
                         </button>
                     </form>
-                </li> -->
-                <li>
-                    <a href="/register">Creá tu cuenta <i class="far fa-address-card"></i></a>
-                </li>
-                <li>
-                    <a href="/login">Ingresá <i class="fas fa-sign-in-alt"></i></a>
                 </li>
             </ul>
         </nav>
