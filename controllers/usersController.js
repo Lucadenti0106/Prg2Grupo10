@@ -1,7 +1,7 @@
 
 
 
-const userData = require('../data/userdata');
+const userData = require('../db/modulo_datos');
 
 const usersController = {
     login: (req, res) => {
