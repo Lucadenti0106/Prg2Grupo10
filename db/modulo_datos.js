@@ -5,7 +5,7 @@ const moduloDatos = {
           contrasenia: "1234",
           fecha_nacimiento: "1995-06-15",
           dni: 12345678,
-          foto_perfil: "/images/agus.jpg",
+          foto_perfil: "/images/users/default-image.png",
           createdAt: "2024-04-07T12:00:00Z",
           updatedAt: "2024-04-07T12:00:00Z"
     },
@@ -19,12 +19,14 @@ const moduloDatos = {
                 {
                     usuario: "usuario1",
                     texto: "Excelente producto, muy satisfecho con la compra",
-                    puntaje: 5
+                    puntaje: 5,
+                    foto_perfil: "/images/users/user-1.png"
                 },
                 {
                     usuario: "usuario2",
                     texto: "Buena relación calidad-precio",
-                    puntaje: 4
+                    puntaje: 4,
+                    foto_perfil: "/images/users/user-2.png"
                 }
             ]
         },
@@ -37,12 +39,14 @@ const moduloDatos = {
                 {
                     usuario: "usuario3",
                     texto: "El sonido es increíble, los uso todo el día",
-                    puntaje: 5
+                    puntaje: 5,
+                    foto_perfil: "/images/users/user-1.png"
                 },
                 {
                     usuario: "usuario1",
                     texto: "Cómodos pero podrían tener mejor micrófono",
-                    puntaje: 3
+                    puntaje: 3,
+                    foto_perfil: "/images/users/user-2.png"
                 }
             ]
         },
@@ -55,12 +59,14 @@ const moduloDatos = {
                 {
                     usuario: "usuario4",
                     texto: "Muy rápida, arranca en segundos",
-                    puntaje: 5
+                    puntaje: 5,
+                    foto_perfil: "/images/users/user-1.png"
                 },
                 {
                     usuario: "usuario2",
                     texto: "Le falta algo de duración de batería",
-                    puntaje: 4
+                    puntaje: 4,
+                    foto_perfil: "/images/users/user-2.png"
                 }
             ]
         },
@@ -73,12 +79,14 @@ const moduloDatos = {
                 {
                     usuario: "usuario5",
                     texto: "Excelente para entrenar, liviano y práctico",
-                    puntaje: 5
+                    puntaje: 5,
+                    foto_perfil: "/images/users/user-1.png"
                 },
                 {
                     usuario: "usuario3",
                     texto: "Muy buena app complementaria",
-                    puntaje: 4
+                    puntaje: 4,
+                    foto_perfil: "/images/users/user-2.png"
                 }
             ]
         },
@@ -91,12 +99,14 @@ const moduloDatos = {
                 {
                     usuario: "usuario6",
                     texto: "Imágenes nítidas incluso bajo el agua",
-                    puntaje: 5
+                    puntaje: 5,
+                    foto_perfil: "/images/users/user-1.png"
                 },
                 {
                     usuario: "usuario1",
                     texto: "La batería dura menos de lo que esperaba",
-                    puntaje: 3
+                    puntaje: 3,
+                    foto_perfil: "/images/users/user-2.png"
                 }
             ]
         },
@@ -109,12 +119,14 @@ const moduloDatos = {
                 {
                     usuario: "usuario4",
                     texto: "Ideal para dibujar con el stylus",
-                    puntaje: 5
+                    puntaje: 5,
+                    foto_perfil: "/images/users/user-1.png"
                 },
                 {
                     usuario: "usuario7",
                     texto: "Un poco cara, pero cumple",
-                    puntaje: 4
+                    puntaje: 4,
+                    foto_perfil: "/images/users/user-2.png"
                 }
             ]
         },
@@ -127,12 +139,14 @@ const moduloDatos = {
                 {
                     usuario: "usuario8",
                     texto: "Las teclas son muy suaves y se sienten pro",
-                    puntaje: 5
+                    puntaje: 5,
+                    foto_perfil: "/images/users/user-1.png"
                 },
                 {
                     usuario: "usuario2",
                     texto: "El RGB es un poco exagerado, pero me gusta",
-                    puntaje: 4
+                    puntaje: 4,
+                    foto_perfil: "/images/users/user-2.png"
                 }
             ]
         },
@@ -145,12 +159,14 @@ const moduloDatos = {
                 {
                     usuario: "usuario9",
                     texto: "Gran calidad de imagen y fácil configuración",
-                    puntaje: 5
+                    puntaje: 5,
+                    foto_perfil: "/images/users/user-1.png"
                 },
                 {
                     usuario: "usuario6",
                     texto: "Sería mejor con más puertos",
-                    puntaje: 4
+                    puntaje: 4,
+                    foto_perfil: "/images/users/user-2.png"
                 }
             ]
         },
@@ -163,12 +179,14 @@ const moduloDatos = {
                 {
                     usuario: "usuario3",
                     texto: "Desde que lo uso me duele menos la muñeca",
-                    puntaje: 5
+                    puntaje: 5,
+                    foto_perfil: "/images/users/user-1.png"
                 },
                 {
                     usuario: "usuario5",
                     texto: "Buena precisión, aunque es algo grande",
-                    puntaje: 4
+                    puntaje: 4,
+                    foto_perfil: "/images/users/user-2.png"
                 }
             ]
         },
@@ -181,12 +199,14 @@ const moduloDatos = {
                 {
                     usuario: "usuario10",
                     texto: "Carga rapidísimo y no se calienta",
-                    puntaje: 5
+                    puntaje: 5,
+                    foto_perfil: "/images/users/user-1.png"
                 },
                 {
                     usuario: "usuario8",
                     texto: "Muy útil para viajes",
-                    puntaje: 5
+                    puntaje: 5,
+                    foto_perfil: "/images/users/user-2.png"
                 }
             ]
         }
