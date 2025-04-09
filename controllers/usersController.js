@@ -1,7 +1,4 @@
-
-
-
-const userData = require('../db/modulo_datos');
+const moduloDatos = require('../db/modulo_datos');
 
 const usersController = {
     login: (req, res) => {
@@ -11,10 +8,11 @@ const usersController = {
         res.render("register");
     },    
     profile: (req, res) => {
-        // Pasar los datos del usuario a la vista
-        const usuario = userData.usuario;
-        res.render("profile", { usuario });
-    }
+        res.render("profile", {
+            usuario: moduloDatos.usuario,
+            productos: moduloDatos.productos
+        });
+    },
 }
 
 module.exports = usersController;

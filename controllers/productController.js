@@ -1,5 +1,3 @@
-
-
 const modulo_datos = require('../db/modulo_datos');
 const productController = {
     mostrarProducto: (req, res) => {

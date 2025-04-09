@@ -2,115 +2,89 @@
 <html lang="es">
 <!-- Include Head -->
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link width="" rel="shortcut icon" href="/images/logo-mercado-liebre.jpg" />
-	
-	<title> Mercado Liebre Argentina</title>
-			<!-- Font Awesome Stylesheet -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-	<!-- Bootstrap Grid Stylesheet -->
-	<link rel="stylesheet" href="/css/bootstrap-grid.min.css">
-	<!-- Own Stylesheet -->
-	<link rel="stylesheet" href="/css/app.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link width="" rel="shortcut icon" href="/images/logo-mercado-liebre.jpg" />
+
+    <title> Mercado Liebre Argentina</title>
+        <!-- Font Awesome Stylesheet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <!-- Bootstrap Grid Stylesheet -->
+    <link rel="stylesheet" href="/css/bootstrap-grid.min.css">
+    <!-- Own Stylesheet -->
+    <link rel="stylesheet" href="/css/app.css">
 </head>
 <body>
-	<!-- Header -->
-	<%- include('partials/headerLogueado', { usuario }) %>
-	<!-- /Header -->
+    <!-- Header -->
+    <%- include('partials/headerLogeado', { usuario }) %>
+    <!-- /Header -->
 
-	<!-- Datos del usuario -->
-	<div class="img-container offset-3 col-2">
-		<img src="<%= usuario.fotoPerfil %>" alt="foto de perfil" class="foto-perfil">
-	</div>
-	<div class="data-container col-6">
-		<div class="d-flex align-items-center ">
-			<h1 class="main-title"><%= usuario.nombre %> 
-				<a href="/profile-edit">
-					<i class="fas fa-cog"></i>
-				</a>
-			</h1>
-			<a class="btn mt-3 ml-4" href="">SEGUIR</a>
-		</div>
-		<div>
-			<p>Email: <%= usuario.email %></p>
-		</div>
-	
-	<!-- /Datos del usuario -->
+    <!-- Datos del usuario -->
+    <div class="container products-wrapper"> <!-- Envuelve todo en un container para consistencia -->
+        <div class="row"> <!-- Usa row para alinear -->
+            <div class="col-12">
+                <div class="d-flex align-items-center"> <!-- Flex para alinear imagen y texto -->
+                    <div class="img-container col-2">
+                        <!-- Corregido: usuario.foto_perfil -->
+                        <img src="<%= usuario.foto_perfil %>" alt="foto de perfil" class="foto-perfil">
+                    </div>
+                    <div class="data-container col-10"> <!-- Ajusta el ancho -->
+                        <div class="d-flex align-items-center ">
+                            <!-- Corregido: usuario.usuario -->
+                            <h1 class="main-title"><%= usuario.usuario %>
+                                <a href="/profile-edit"> <!-- Asumiendo que esta ruta existirá -->
+                                    <i class="fas fa-cog"></i>
+                                </a>
+                            </h1>
+                            <a class="btn mt-3 ml-4" href="">SEGUIR</a> <!-- Funcionalidad futura -->
+                        </div>
+                        <div>
+                            <p>Email: <%= usuario.email %></p>
+                            <!-- Puedes añadir más datos si quieres -->
+                            <!-- <p>DNI: <%= usuario.dni %></p> -->
+                            <!-- <p>Fecha de Nacimiento: <%= usuario.fecha_nacimiento %></p> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!-- /Datos del usuario -->
 
-	<!-- Mis productos -->
-	<div class="container products-wrapper">
-		<div class="row">
-			<div class="col-12">
-				<h2 class="products-title">Mis productos</h2>
-			</div>
-			<!-- Show mis productos -->
-			<div class="col-12 col-sm-6 col-lg-3">
-				<section class="product-box">
-					<a href="/product/1">
-						<figure class="product-box_image">
-							<img src="/images/products/default-image.png" alt="cafetera moulinex">
-						</figure>
-						<article class="product-box_data">
-							<h2>Nombre del producto</h2>
-							<p>Descripción corta del producto Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque delectus ex</p>
-							<p>Comentarios: 12</p>
-						</article>
-					</a>
-				</section>
-			</div>
-			<div class="col-12 col-sm-6 col-lg-3">
-				<section class="product-box">
-					<a href="/product/1">
-						<figure class="product-box_image">
-							<img src="/images/products/default-image.png" alt="cafetera moulinex">
-						</figure>
-						<article class="product-box_data">
-							<h2>Nombre del producto</h2>
-							<p>Descripción corta del producto Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque
-								delectus ex</p>
-							<p>Comentarios: 12</p>
-						</article>
-					</a>
-				</section>
-			</div>
-			<div class="col-12 col-sm-6 col-lg-3">
-				<section class="product-box">
-					<a href="/product/1">
-						<figure class="product-box_image">
-							<img src="/images/products/default-image.png" alt="cafetera moulinex">
-						</figure>
-						<article class="product-box_data">
-							<h2>Nombre del producto</h2>
-							<p>Descripción corta del producto Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque
-								delectus ex</p>
-							<p>Comentarios: 12</p>
-						</article>
-					</a>
-				</section>
-			</div>
-			<div class="col-12 col-sm-6 col-lg-3">
-				<section class="product-box">
-					<a href="/product/1">
-						<figure class="product-box_image">
-							<img src="/images/products/default-image.png" alt="cafetera moulinex">
-						</figure>
-						<article class="product-box_data">
-							<h2>Nombre del producto</h2>
-							<p>Descripción corta del producto Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque
-								delectus ex</p>
-							<p>Comentarios: 12</p>
-						</article>
-					</a>
-				</section>
-			</div>
-		</div>
-	</div>
-	<!-- /Mis productos -->
+    <!-- Mis productos -->
+        <div class="row"> <!-- Nuevo row para productos -->
+            <div class="col-12">
+                <h2 class="products-title">Mis productos</h2>
+            </div>
+            <!-- Show mis productos (Asumiendo que pasas 'productos' desde el controlador) -->
+            <% if (typeof productos !== 'undefined' && productos.length > 0) { %>
+                <% productos.forEach(producto => { %>
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <section class="product-box">
+                            <a href="/product/<%= producto.id %>">
+                                <figure class="product-box_image">
+                                    <img src="<%= producto.imagen %>" alt="<%= producto.nombre %>">
+                                </figure>
+                                <article class="product-box_data">
+                                    <h2><%= producto.nombre %></h2>
+                                    <p><%= producto.descripcion.substring(0, 80) %>...</p>
+                                    <p>Comentarios: <%= producto.comentarios.length %></p>
+                                </article>
+                            </a>
+                        </section>
+                    </div>
+                <% }); %>
+            <% } else { %>
+                <div class="col-12">
+                    <p>No has publicado productos aún.</p>
+                </div>
+            <% } %>
+        </div>
+    </div>
+    <!-- /Mis productos -->
 
 
-	<!-- footer -->
-	<%- include('partials/footer') %>
-	<!-- /footer -->
-</body>	
+    <!-- footer -->
+    <%- include('partials/footer') %>
+    <!-- /footer -->
+</body>
 </html>
