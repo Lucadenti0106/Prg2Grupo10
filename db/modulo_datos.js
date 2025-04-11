@@ -5,14 +5,14 @@ const moduloDatos = {
           usuario: "agustin",
           contrasenia: "1234",
           fecha_nacimiento: "1995-06-15",
-          dni: 12345678,
+          dni: 12345678910,
           foto_perfil: "/images/users/default-image.png",
           createdAt: "2024-04-07T12:00:00Z",
           updatedAt: "2024-04-07T12:00:00Z"
     },
     productos: [
         {
-            id: 1,
+            id: 0,
             nombre_producto: "Cafetera moulinex",
             descripcion: "Cafetera de especialidad",
             imagen: "/images/products/img-cafetera-moulinex.jpg",
@@ -32,7 +32,7 @@ const moduloDatos = {
             ]
         },
         {
-            id: 2,
+            id: 1,
             nombre_producto: "macbook pro 2019",
             descripcion: "Con cancelación de ruido y hasta 20 horas de batería",
             imagen: "/images/products/img-macbook-pro-2019.jpg",            
@@ -52,7 +52,7 @@ const moduloDatos = {
             ]
         },
         {
-            id: 3,
+            id: 2,
             nombre_producto: "samsung galaxy s10",
             descripcion: "Ligera y potente, ideal para estudiantes y profesionales",
             imagen: "/images/products/img-samsung-galaxy-s10.jpg",            
@@ -72,7 +72,7 @@ const moduloDatos = {
             ]
         },
         {
-            id: 4,
+            id: 3,
             nombre_producto: "samsung smart tv",
             descripcion: "Controla tu actividad diaria y monitorea tu salud",
             imagen: "/images/products/img-tv-samsung-smart.jpg",            
