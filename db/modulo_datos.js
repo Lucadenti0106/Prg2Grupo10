@@ -13,9 +13,9 @@ const moduloDatos = {
     productos: [
         {
             id: 0,
-            nombre_producto: "Cafetera moulinex",
-            descripcion: "Cafetera de especialidad",
-            imagen: "/images/products/img-cafetera-moulinex.jpg",
+            nombre_producto: "GMT-Master II",
+            descripcion: "Mismo material, mismo color, mismo lustre. El rostro y el bisel de la nueva versión del Oyster Perpetual GMT‑Master II en oro blanco de 18 quilates muestran una continuidad sin parangón.",
+            imagen: "/images/rolex/rolex-1.avif",
             comentarios: [
                 {
                     usuario: "usuario1",
@@ -33,9 +33,9 @@ const moduloDatos = {
         },
         {
             id: 1,
-            nombre_producto: "macbook pro 2019",
-            descripcion: "Con cancelación de ruido y hasta 20 horas de batería",
-            imagen: "/images/products/img-macbook-pro-2019.jpg",            
+            nombre_producto: "Oyster Perpetual",
+            descripcion: "La suavidad de un tono lavanda, la calidez de un beis arena, la frescura de un verde pistacho.",
+            imagen: "/images/rolex/rolex-2.avif",            
             comentarios: [
                 {
                     usuario: "usuario3",
@@ -53,9 +53,9 @@ const moduloDatos = {
         },
         {
             id: 2,
-            nombre_producto: "samsung galaxy s10",
-            descripcion: "Ligera y potente, ideal para estudiantes y profesionales",
-            imagen: "/images/products/img-samsung-galaxy-s10.jpg",            
+            nombre_producto: "1908",
+            descripcion: "Pocas veces el oro macizo ha generado tal sensación de flexibilidad y ligereza al llevarlo puesto.",
+            imagen: "/images/rolex/rolex-3.avif",            
             comentarios: [
                 {
                     usuario: "usuario4",
@@ -73,9 +73,9 @@ const moduloDatos = {
         },
         {
             id: 3,
-            nombre_producto: "samsung smart tv",
-            descripcion: "Controla tu actividad diaria y monitorea tu salud",
-            imagen: "/images/products/img-tv-samsung-smart.jpg",            
+            nombre_producto: "Datejust",
+            descripcion: "Como un sol cuyos rayos iluminan el crepúsculo, la esfera del nuevo Oyster Perpetual Datejust 31 regala a la vista una comunión entre luces y sombras.",
+            imagen: "/images/rolex/rolex-4.avif",            
             comentarios: [
                 {
                     usuario: "usuario5",

@@ -1,16 +1,33 @@
 /*====== Fonts ======*/
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap'); /* Keep Roboto for fallback or specific elements if needed */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&family=Cinzel:wght@400;700&display=swap');
+
 
 
 /*====== Variables ======*/
 :root {
-  --yellow: #EAC926;
-  --dark-blue: #03264C;
-  --light-blue: #1259c3;
-  --gray: #666666;
-  --light-gray: #ebebeb;
-  --green: #39b54a;
-  --base-font-family: 'Roboto', sans-serif
+  --rolex-green: #003721;
+  --rolex-gold: #B08D57;
+  --background-white: #FFFFFF;
+  --background-offwhite: #F8F8F8;
+  --text-dark: #333333;
+  --light-gray: #E0E0E0;
+
+  --yellow: var(--rolex-gold); 
+  --dark-blue: var(--rolex-green); 
+  --light-blue: #007a4d; 
+  --gray: #666666; 
+  --green: var(--rolex-green); 
+
+
+  
+
+  
+    /* Font Families */
+  --base-font-family: 'Lato', sans-serif;
+  --title-font-family: 'Playfair Display', serif;    
+  --site-name-font-family: 'Cinzel', serif;
+
 }
 
 
@@ -28,9 +45,11 @@ body {
 
 body {
   font-family: var(--base-font-family);
-  font-weight: 300;
-  background-color: var(--light-gray);
+  font-weight: 400; 
+  background-color: var(--background-offwhite); 
+  color: var(--text-dark); 
 }
+
 
 ul,
 ol {
@@ -42,8 +61,12 @@ ol {
 a {
   display: inline-block;
   text-decoration: none;
-  color: inherit;
+  color: var(--rolex-gold);
 }
+a:hover {
+  text-decoration: underline;   
+}
+
 
 figure {
   margin: 0;
@@ -52,11 +75,27 @@ figure {
 
 img {
   width: 100%;
+  display: block;
 }
 
 input,
 textarea {
   font-family: inherit;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--title-font-family);
+  color: var(--rolex-green); 
+  font-weight: 700; 
+  margin-top: 1.5;
+  margin-bottom: 0.5;
+}
+
+
+
+p {
+    font-size: 1.5;
+    line-height: 1.5;
+    color: var(--text-dark);
 }
 
 hr {
@@ -68,7 +107,8 @@ hr {
 /*====== Main Header ======*/
 .main-header {
   padding: 15px 0;
-  background-color: var(--yellow);
+  background-color: var(--rolex-green);
+  border-bottom: 5px solid var(--rolex-gold);
 }
 
 .main-header_home-link,
@@ -154,7 +194,7 @@ hr {
 
 /*====== Banner ======*/
 .banner {
-  background-image: url(/images/img-home-banner.jpg);
+  background-image: url(/images/rolex/banner-rolex2.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -162,7 +202,7 @@ hr {
 }
 
 
-/*====== Products ======*/
+/*====== Products ======*/ 
 .products-wrapper {
   margin-top: 30px;
   margin-bottom: 30px;
