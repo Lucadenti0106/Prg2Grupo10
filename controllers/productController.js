@@ -1,16 +1,21 @@
 const modulo_datos = require('../db/modulo_datos');
+
+
+let producto = modulo_datos.productos[0];
+let comentarios = producto.comentarios;
+
+
 const productController = {
     mostrarProducto: (req, res) => {
-        let idProducto = req.params.id;
-        // Buscar el producto por ID 
-        let producto = modulo_datos.productos[0]; // Para esta entrega usamos datos estáticos
-        let comentarios = producto.comentarios;
-        
+
         res.render("product", { producto, comentarios });
     },
     agregar: (req, res) => {
         const usuario = modulo_datos.usuario;
         res.render("product-add", { usuario });
+    },
+    search: (req, res) => {
+        res.render("search-results", { productos: modulo_datos.productos });
     }
 }
 

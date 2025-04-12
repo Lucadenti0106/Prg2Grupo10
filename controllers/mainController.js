@@ -5,8 +5,6 @@ const mainController = {
         // Pasar la lista de productos a la vista index
         res.render("index", { productos: moduloDatos.productos }); 
     },
-    search: (req, res) => {
-        res.render("search-results");
-    }
+
 }
 module.exports = mainController;
