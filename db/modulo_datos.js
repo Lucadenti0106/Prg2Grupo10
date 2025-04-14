@@ -6,7 +6,7 @@ const moduloDatos = {
           contrasenia: "1234",
           fecha_nacimiento: "1995-06-15",
           dni: 12345678910,
-          foto_perfil: "/images/users/user-1.png"
+          foto_perfil: "/images/users/default-image.png"
     },
     productos: [
         {
