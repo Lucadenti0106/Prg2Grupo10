@@ -136,17 +136,22 @@ hr {
   border-radius: 3px;
   height: 40px;
   font-size: 1.5em;
+  background-color: var(--background-white);
+  color: var(--text-dark  );
+
 }
+
 
 .search-form_button {
   position: absolute;
-  right: 2px;
-  height: 60%;
-  background-color: #ffffff;
+  right: 0px; 
+  height: 100%;
+  background-color: var(--rolex-gold); 
   border: none;
-  border-left: solid 1px var(--light-gray);
-  color: var(--gray);
+  color: var(--rolex-green); 
   cursor: pointer;
+  padding: 0 10px; 
+  border-radius: 0 3px 3px 0; 
 }
 
 

@@ -17,7 +17,7 @@ const moduloDatos = {
             comentarios: [
                 {
                     usuario: "usuario1",
-                    texto: "Excelente producto, muy satisfecho con la compra",
+                    texto: "El diseño es audaz, elegante y exclusivo",
                     puntaje: 5,
                     foto_perfil: "/images/users/user-1.png"
                 },
@@ -37,13 +37,13 @@ const moduloDatos = {
             comentarios: [
                 {
                     usuario: "usuario3",
-                    texto: "El sonido es increíble, los uso todo el día",
+                    texto: "Producto de mucha calidad",
                     puntaje: 5,
                     foto_perfil: "/images/users/user-1.png"
                 },
                 {
                     usuario: "usuario1",
-                    texto: "Cómodos pero podrían tener mejor micrófono",
+                    texto: "Muy buen reloj a buen precio",
                     puntaje: 3,
                     foto_perfil: "/images/users/user-2.png"
                 }
@@ -57,7 +57,7 @@ const moduloDatos = {
             comentarios: [
                 {
                     usuario: "usuario4",
-                    texto: "Muy rápida, arranca en segundos",
+                    texto: "Excelente reloj muy contento contento con la compra!",
                     puntaje: 5,
                     foto_perfil: "/images/users/user-1.png"
                 },
@@ -77,13 +77,13 @@ const moduloDatos = {
             comentarios: [
                 {
                     usuario: "usuario5",
-                    texto: "Excelente para entrenar, liviano y práctico",
+                    texto: "Modelo divertido y color elegante",
                     puntaje: 5,
                     foto_perfil: "/images/users/user-1.png"
                 },
                 {
                     usuario: "usuario3",
-                    texto: "Muy buena app complementaria",
+                    texto: "Buen diseño y útil para ir al agua, rolex nunca me falla",
                     puntaje: 4,
                     foto_perfil: "/images/users/user-2.png"
                 }
