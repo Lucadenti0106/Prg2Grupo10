@@ -89,6 +89,126 @@ const moduloDatos = {
                 }
             ]
         },
+        {
+            id: 4,
+            nombre_producto: "Land‑Dweller",
+            descripcion: "Reinventar el presente para escribir el futuro. Con un calibre a la vanguardia de la innovación y con un diseño único, el Oyster Perpetual Land‑Dweller, presentado en 2025, es un hito fundamental en la historia de los relojes Rolex.",
+            imagen: "/images/rolex/rolex-5.avif",            
+            comentarios: [
+                {
+                    usuario: "usuario5",
+                    texto: "Modelo divertido y color elegante",
+                    puntaje: 5,
+                    foto_perfil: "/images/users/user-1.png"
+                },
+                {
+                    usuario: "usuario3",
+                    texto: "Buen diseño y útil para ir al agua, rolex nunca me falla",
+                    puntaje: 4,
+                    foto_perfil: "/images/users/user-2.png"
+                }
+            ]
+        },
+        {
+            id: 5,
+            nombre_producto: "Datejust 36",
+            descripcion: "Oyster, 36 mm, acero Oystersteel y oro blanco Referencia 126234",
+            imagen: "/images/rolex/rolex-6.avif",            
+            comentarios: [
+                {
+                    usuario: "usuario5",
+                    texto: "Modelo divertido y color elegante",
+                    puntaje: 5,
+                    foto_perfil: "/images/users/user-1.png"
+                },
+                {
+                    usuario: "usuario3",
+                    texto: "Buen diseño y útil para ir al agua, rolex nunca me falla",
+                    puntaje: 4,
+                    foto_perfil: "/images/users/user-2.png"
+                }
+            ]
+        },
+        {
+            id: 6,
+            nombre_producto: "oyster perpetual 41",
+            descripcion: "Oyster Perpetual 41 con una esfera verde pistacho y un brazalete Oyster.",
+            imagen: "/images/rolex/rolex-7.avif",            
+            comentarios: [
+                {
+                    usuario: "usuario5",
+                    texto: "Modelo divertido y color elegante",
+                    puntaje: 5,
+                    foto_perfil: "/images/users/user-1.png"
+                },
+                {
+                    usuario: "usuario3",
+                    texto: "Buen diseño y útil para ir al agua, rolex nunca me falla",
+                    puntaje: 4,
+                    foto_perfil: "/images/users/user-2.png"
+                }
+            ]
+        },
+        {
+            id: 7,
+            nombre_producto: "Rolex Deepsea",
+            descripcion: "Oyster Perpetual Rolex Deepsea en oro amarillo de 18 quilates, con disco de bisel Cerachrom en cerámica azul y brazalete Oyster.",
+            imagen: "/images/rolex/rolex-8.avif",            
+            comentarios: [
+                {
+                    usuario: "usuario5",
+                    texto: "Modelo divertido y color elegante",
+                    puntaje: 5,
+                    foto_perfil: "/images/users/user-1.png"
+                },
+                {
+                    usuario: "usuario3",
+                    texto: "Buen diseño y útil para ir al agua, rolex nunca me falla",
+                    puntaje: 4,
+                    foto_perfil: "/images/users/user-2.png"
+                }
+            ]
+        },
+        {
+            id: 8,
+            nombre_producto: "Explorer II",
+            descripcion: "Este Oyster Perpetual Explorer II en acero Oystersteel con brazalete Oyster presenta una esfera blanca con una aguja 24 horas en forma de flecha e índices con visualización Chromalight.",
+            imagen: "/images/rolex/rolex-9.avif",            
+            comentarios: [
+                {
+                    usuario: "usuario5",
+                    texto: "Modelo divertido y color elegante",
+                    puntaje: 5,
+                    foto_perfil: "/images/users/user-1.png"
+                },
+                {
+                    usuario: "usuario3",
+                    texto: "Buen diseño y útil para ir al agua, rolex nunca me falla",
+                    puntaje: 4,
+                    foto_perfil: "/images/users/user-2.png"
+                }
+            ]
+        },
+        {
+            id: 9,
+            nombre_producto: "1948",
+            descripcion: "El Perpetual 1908 presenta una caja de 39 mm en platino con correa de piel de aligátor.",
+            imagen: "/images/rolex/rolex-10.avif",            
+            comentarios: [
+                {
+                    usuario: "usuario5",
+                    texto: "Modelo divertido y color elegante",
+                    puntaje: 5,
+                    foto_perfil: "/images/users/user-1.png"
+                },
+                {
+                    usuario: "usuario3",
+                    texto: "Buen diseño y útil para ir al agua, rolex nunca me falla",
+                    puntaje: 4,
+                    foto_perfil: "/images/users/user-2.png"
+                }
+            ]
+        },
     ]
 };
 

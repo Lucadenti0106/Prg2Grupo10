@@ -53,30 +53,22 @@
                 <h2 class="products-title">Mis productos</h2>
             </div>
             
-            <% if (typeof productos !== 'undefined' && productos.length > 0) { %>
-                <% productos.forEach(producto => { %>
-                    <div class="col-12 col-sm-6 col-lg-3">
-                        <section class="product-box">
-                            <a href="/product/<%= producto.id %>">
-                                <figure class="product-box_image">
-                                    <img src="<%= producto.imagen %>" alt="<%= producto.nombre_producto %>">
-                                </figure>
-                                <article class="product-box_data">
-                                    <h2><%= producto.nombre_producto %></h2>
-                                    <p><%= producto.descripcion.substring(0, 80) %>...</p>
-                                    <p>Comentarios: <%= producto.comentarios.length %></p>
-                                </article>
-                            </a>
-                        </section>
-                    </div>
-                <% }); %>
-            <% } else { %>
-                <div class="col-12">
-                    <p>No has publicado productos aún.</p>
+            <% for(let i = 0; i < productos.length; i++) { %>
+                <% let producto = productos[i]; %>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <section class="product-box">
+                        <a href="/product/<%= producto.id %>">
+                            <figure class="product-box_image">
+                                <img src="<%= producto.imagen %>" alt="<%= producto.nombre_producto %>">
+                            </figure>
+                            <article class="product-box_data">
+                                <h2><%= producto.nombre_producto %></h2>
+                                <p>Comentarios: <%= producto.comentarios.length %></p>
+                            </article>
+                        </a>
+                    </section>
                 </div>
             <% } %>
-        </div>
-    </div>
     <!-- /Mis productos -->
 
 
