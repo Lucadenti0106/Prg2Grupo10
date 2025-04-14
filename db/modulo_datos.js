@@ -2,11 +2,11 @@ const moduloDatos = {
     usuario: {
           id: 1,
           email: "agustin@gmail.com",
-          usuario: "agustin",
+          usuario: "Agustin",
           contrasenia: "1234",
           fecha_nacimiento: "1995-06-15",
           dni: 12345678910,
-          foto_perfil: "/images/users/default-image.png"
+          foto_perfil: "/images/users/user-1.png"
     },
     productos: [
         {
