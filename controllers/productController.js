@@ -7,6 +7,15 @@ let comentarios = producto.comentarios;
 
 const productController = {
     mostrarProducto: (req, res) => {
+    const id = parseInt(req.params.id); //parseint transforma un string en un numero ("" a numero normal) //
+    let producto = null;
+
+    for (let i = 0; i < modulo_datos.productos.length; i++) {
+        if (modulo_datos.productos[i].id === id) {
+            producto = modulo_datos.productos[i];
+            break;
+        }
+    }
 
         res.render("product", { producto, comentarios });
     },

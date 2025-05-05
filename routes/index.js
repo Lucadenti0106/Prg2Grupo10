@@ -6,3 +6,7 @@ router.get('/', mainController.index);
 
 
 module.exports = router;
+
+// db.sequialize =sequelize;
+// db.Sequilize = Sequilize;
+// module.exports = db;
