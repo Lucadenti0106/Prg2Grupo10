@@ -13,12 +13,16 @@ module.exports = function (sequelize, dataTypes) {
             type: dataTypes.INTEGER.UNSIGNED,
             allowNull: false
         },
-        nombre_producto: {
-            type: dataTypes.STRING(100),
+        imagen_producto: { 
+            type: dataTypes.TEXT, 
             allowNull: false
         },
-        descripcion: {
-            type: dataTypes.STRING(255),
+        nombre_producto: {
+            type: dataTypes.STRING(50), 
+            allowNull: false
+        },
+        descripcion: { 
+            type: dataTypes.TEXT,
             allowNull: false
         },
         createdAt: {
@@ -33,7 +37,7 @@ module.exports = function (sequelize, dataTypes) {
     };
 
     let config = {
-        tableName: "products",
+        tableName: "productos", // Corrected table name to match SQL
         timestamps: true,
         underscored: true
     };

@@ -9,17 +9,17 @@ module.exports = function (sequelize, dataTypes) {
             type: dataTypes.INTEGER.UNSIGNED,
             allowNull: false
         },
+        comentario: {
+            type: dataTypes.STRING(100),
+            allowNull: false
+        },
+        id_producto: {
+            type: dataTypes.INTEGER.UNSIGNED,
+            allowNull: true 
+        },
         id_usuario: {
             type: dataTypes.INTEGER.UNSIGNED,
-            allowNull: false
-        },
-        id_producto:{
-            type: dataTypes.INTEGER.UNSIGNED,
-            allowNull: false
-        },
-        comment:{
-            type: dataTypes.STRING(300),
-            allowNull: false
+            allowNull: true 
         },
         createdAt: {
             type: dataTypes.DATE
@@ -52,5 +52,5 @@ module.exports = function (sequelize, dataTypes) {
         });
     };
 
-    return Comentario;a
+    return Comentario;
 };
