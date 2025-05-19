@@ -20,6 +20,7 @@ const usersController = {
             foto_perfil: req.body.foto_perfil,
             
         });
+        res.redirect("/")
 
     },
 
