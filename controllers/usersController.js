@@ -1,4 +1,5 @@
 const moduloDatos = require('../db/modulo_datos');
+let db = require('../database/models');
 
 const usersController = {
     login: (req, res) => {
@@ -7,12 +8,21 @@ const usersController = {
     register: (req, res) => {
         res.render("register");
     },
-    
-    processRegister: (req, res) => {
-        const { email, usuario, contrasenia, fecha_nacimiento, dni, foto_perfil } = req.body;
-        let errores = [];},
+    create: (req, res) => {
         
-       
+
+        db.User.create({
+            name: req.body.name,
+            email: req.body.email,
+            contrasenia: req.body.contrasenia,
+            fecha_nacimiento: req.body.fecha_nacimiento,
+            dni: req.body.dni,
+            foto_perfil: req.body.foto_perfil,
+            
+        });
+
+    },
+
     profile: (req, res) => {
         res.render("profile", {
             usuario: moduloDatos.usuario,

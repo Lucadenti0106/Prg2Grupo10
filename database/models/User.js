@@ -1,6 +1,6 @@
 module.exports = function (sequelize, dataTypes){
 
-    let alias = 'User'; //Este alias se busca como nombre en de la tabla en plural dentro de la base de datos.
+    let alias = 'User';
 
     let cols = {
         id: {
@@ -27,13 +27,13 @@ module.exports = function (sequelize, dataTypes){
             type: dataTypes.STRING(255)
         },
         createdAt:{
-            type: dataTypes.timestamps
+            type: dataTypes.DATE
         },
         updatedAt:{
-            type: dataTypes.timestamps
+            type: dataTypes.DATE
         },
         deletedAt:{
-            type: dataTypes.timestamps
+            type: dataTypes.DATE
         }
     }
 
