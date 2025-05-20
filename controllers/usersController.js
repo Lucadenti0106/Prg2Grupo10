@@ -9,11 +9,26 @@ const usersController = {
     register: (req, res) => {
         res.render("register", { error: null });
     },
-    logout: (req, res) =>{
-        req.session.destroy();
-        res.redirect("/")
+   
+
+    // Este método se encarga de cerrar la sesión del usuario   
+    // También elimina la cookie de "recordarme" si existe
+    // Destruye la sesión y redirige a la página principal
+
+    logout: (req, res) => {
+        req.session.destroy(() => {
+            res.clearCookie('recordarme');
+            res.redirect('/');
+        });
     },
 
+    // Este método se encarga de procesar el registro del usuario
+    // Verifica si el email y el nombre de usuario ya existen en la base de datos
+    // Si no existen, lo crea en la base de datos
+    // Si ya existen, muestra un mensaje de error
+    // y vuelve a mostrar la vista de registro
+    // Si hay un error en el proceso, muestra un mensaje de error
+    // y vuelve a mostrar la vista de registro
     create: function (req, res) {
         let email_usuario = req.body.email;
         let nombre_usuario = req.body.usuario;
@@ -47,6 +62,46 @@ const usersController = {
                 res.render("register", { error: "Hubo un error al registrar el usuario." });
             });
     },
+
+    // Este método se encarga de procesar el login del usuario
+    // Verifica si el usuario existe y si la contraseña es correcta
+    // Si todo es correcto, guarda la información del usuario en la sesión
+    // y redirige a la página principal 
+    // Si el usuario no existe o la contraseña es incorrecta, muestra un mensaje de error
+    // y vuelve a mostrar la vista de login
+    procesarLogin: function (req, res) {
+        let email = req.body.email;
+        let contrasenia = req.body.contrasenia;
+
+        db.User.findOne({ where: { email: email } })
+            .then(function (user) {
+                if (!user) {
+                    return res.render("login", { error: "El email no existe." });
+                }
+                if (!bcrypt.compareSync(contrasenia, user.contrasenia)) {
+                    return res.render("login", { error: "La contraseña es incorrecta." });
+                }
+                //en esta parte de codigo va a guardar al usuario en la session
+                req.session.usuario = {
+                    id: user.id,
+                    nombre_usuario: user.nombre_usuario,
+                    email: user.email,
+                    foto_perfil: user.foto_perfil
+                };
+
+                // en este bloque de codigo va a guardar al usuario en la cookie si presiono "recordarme"
+                if (req.body.recordame) {
+                    res.cookie("recordame", req.session.usuario, { maxAge: 1000 * 60 * 60 * 24 }); //maxage define cuanto tiempo dura la cookie
+                }
+                return res.redirect("/");
+            })
+            .catch(function (error) {
+                console.error("Error en el proceso de login:", error);
+                res.render("login", { error: "Hubo un error al iniciar sesión." });
+            });
+    },
+    
+    // Este método se encarga de renderizar la vista de perfil del usuario
     profile: (req, res) => {
         res.render("profile", {
             usuario: moduloDatos.usuario,

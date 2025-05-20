@@ -8,6 +8,7 @@ router.get('/login', usersController.login);
 router.get('/register', usersController.register);
 router.post("/register", usersController.create);
 router.get('/logout', usersController.logout);
+router.post('/login', usersController.processLogin);
 
 
 
