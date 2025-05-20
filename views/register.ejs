@@ -57,6 +57,9 @@
 				<div>
 					<button type="submit" class="buy-now-button">Registrarse</button>
 				</div>
+				<% if (error) { %>
+					<div class="error-message"><%= error %></div>
+				  <% } %>
 			</form>
 		</div>
 	</div>
