@@ -33,7 +33,7 @@
             </ul>
 
             <ul class="right-navbar">
-                <% if (typeof usuario !== 'undefined') { %>
+                <% if (usuario) { %>
                  <li><a href="/profile"><%= usuario.usuario %> <i class="fas fa-user"></i></a>
                 </li>
                 <% } else { %>

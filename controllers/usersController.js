@@ -4,7 +4,7 @@ let bcrypt = require('bcryptjs');
 
 const usersController = {
     login: (req, res) => {
-        res.render("login");
+        res.render("login", {error: null});
     },
     register: (req, res) => {
         res.render("register", { error: null });

@@ -1,4 +1,5 @@
 const modulo_datos = require('../db/modulo_datos');
+let db = require('../database/models');
 
 
 let producto = modulo_datos.productos[0];
@@ -20,8 +21,19 @@ const productController = {
         res.render("product", { producto, comentarios });
     },
     agregar: (req, res) => {
-        const usuario = modulo_datos.usuario;
-        res.render("product-add", { usuario });
+        if (req.session.usuario) {
+            db.Product.create({
+                //aca hay que crear toodos los productos y verificar que se agregue correctamente todos los datos, inclusive el id del usuario y todas las variables
+                
+        })
+            
+            res.send("Producto agergado exitosamente");
+            res.render("product-add")
+        } else {
+            res.render("product-add", {
+                error: "Solo los usuarios logueados pueden agregar productos",
+                usuario: req.session.usuario, 
+              });        }
     },
     search: (req, res) => {
         res.render("search-results", { productos: modulo_datos.productos });
