@@ -4,8 +4,11 @@ const productController = require("../controllers/productController")
 
 /* GET home page. */
 router.get('/product/:id', productController.mostrarProducto);
+router.post('/product/:id/comentar', productController.comentar);
 router.get('/product-add', productController.agregar);
 router.get('/search-results', productController.search);
+
+
 
 
 

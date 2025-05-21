@@ -18,8 +18,11 @@
 
 <body>
 	<!-- Header -->
-	<%- include('partials/headerLogeado', { usuario }) %>
-	<!-- /Header -->
+	<% if (usuario) { %>
+		<%- include('partials/headerlogueado') %>
+	<% } else { %>
+		<%- include('partials/header') %>
+	<% } %>	<!-- /Header -->
 
 	<!-- Novedades -->
 	<div class="container products-wrapper">

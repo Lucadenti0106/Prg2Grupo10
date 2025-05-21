@@ -6,13 +6,16 @@ module.exports = function (sequelize, dataTypes){
         id: {
             autoIncrement: true,
             primaryKey: true,
-            type: dataTypes.INTEGER.UNSIGNED
+            type: dataTypes.INTEGER.UNSIGNED,
+            unique: true
         },
         email: {
-            type: dataTypes.STRING(100)
+            type: dataTypes.STRING(100),
+            unique: true
         },
         nombre_usuario: {
-            type: dataTypes.STRING(100)
+            type: dataTypes.STRING(100),
+            unique: true
         },
         contrasenia: {
             type: dataTypes.STRING(255)

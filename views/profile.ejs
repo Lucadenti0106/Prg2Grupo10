@@ -16,8 +16,11 @@
 </head>
 <body>
     <!-- Header -->
-    <%- include('partials/headerLogeado', { usuario }) %>
-    <!-- /Header -->
+    <% if (usuario) { %>
+        <%- include('partials/headerlogueado') %>
+    <% } else { %>
+        <%- include('partials/header') %>
+    <% } %>    <!-- /Header -->
 
     <!-- Datos del usuario -->
     <div class="container products-wrapper"> 

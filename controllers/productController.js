@@ -8,7 +8,7 @@ let comentarios = producto.comentarios;
 
 const productController = {
     mostrarProducto: (req, res) => {
-    const id = parseInt(req.params.id); //parseint transforma un string en un numero ("" a numero normal) //
+    const id = Number(req.params.id); 
     let producto = null;
 
     for (let i = 0; i < modulo_datos.productos.length; i++) {
@@ -37,6 +37,23 @@ const productController = {
     },
     search: (req, res) => {
         res.render("search-results", { productos: modulo_datos.productos });
+    },
+    comentar: (req, res) => {
+
+        const usuario = req.session.usuario;
+        const id = usuario.id;
+        const nombre = usuario.nombre;
+        if (req.session) {
+            db.Comentario.create({
+                comentario: req.body.comentar,
+                id_producto: req.params.id,
+                id_usuario: req.session.usuario.id,
+            })
+        } else {
+            // El usuario NO está logueado redirije a login para que inicie sesion y ahi pueda comentar sobre el producto
+            return res.redirect('/login');
+        }
+
     }
 }
 

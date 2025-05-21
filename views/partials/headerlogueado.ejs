@@ -34,8 +34,7 @@
 
             <ul class="right-navbar">
                 <% if (usuario) { %>
-                 <li><a href="/profile"><%= usuario.usuario %> <i class="fas fa-user"></i></a>
-                </li>
+                    <li><a href="/profile"><%= usuario.nombre_usuario %> <i class="fas fa-user"></i></a></li>                </li>
                 <% } else { %>
                  <li><a href="/profile">Mi Perfil <i class="fas fa-user"></i></a>
                 </li>

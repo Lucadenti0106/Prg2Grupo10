@@ -18,7 +18,11 @@
 
 <body>
 	<!-- Header -->
-	<%- include('partials/header') %>
+	<% if (usuario) { %>
+		<%- include('partials/headerlogueado') %>
+	<% } else { %>
+		<%- include('partials/header') %>
+	<% } %>	
 	<!-- /Header -->
 
 	<!-- Novedades -->
