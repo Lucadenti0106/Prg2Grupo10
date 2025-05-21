@@ -34,13 +34,13 @@ const usersController = {
         let nombre_usuario = req.body.usuario;
 
         db.User.findOne({ where: { email: email_usuario } })
-            .then(function (userEmail) {
-                if (userEmail) {
+            .then(function (usuarioEmail) {
+                if (usuarioEmail) {
                     return res.render("register", { error: "El email ya existe." });
                 }
             })
-            .then(function (userName) {
-                if (userName) {
+            .then(function (usuarioName) {
+                if (usuarioName) {
                     return res.render("register", { error: "El nombre de usuario ya existe." });
                 }
 
@@ -74,19 +74,19 @@ const usersController = {
         let contrasenia = req.body.contrasenia;
 
         db.User.findOne({ where: { email: email } })
-            .then(function (user) {
-                if (!user) {
+            .then(function (usuario) {
+                if (!usuario) {
                     return res.render("login", { error: "El email no existe." });
                 }
-                if (!bcrypt.compareSync(contrasenia, user.contrasenia)) {
+                if (!bcrypt.compareSync(contrasenia, usuario.contrasenia)) {
                     return res.render("login", { error: "La contraseña es incorrecta." });
                 }
                 //en esta parte de codigo va a guardar al usuario en la session
                 req.session.usuario = {
-                    id: user.id,
-                    nombre_usuario: user.nombre_usuario,
-                    email: user.email,
-                    foto_perfil: user.foto_perfil
+                    id_usuario: usuario.id,
+                    nombre_usuario: usuario.nombre_usuario,
+                    email: usuario.email,
+                    foto_perfil: usuario.foto_perfil
                 };
 
                 // en este bloque de codigo va a guardar al usuario en la cookie si presiono "recordarme"
