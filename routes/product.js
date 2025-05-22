@@ -6,7 +6,7 @@ const productController = require("../controllers/productController")
 router.get('/product/:id', productController.mostrarProducto);
 router.post('/product/:id/comentar', productController.comentar);
 
-router.get('/product-add', productController.product);
+router.get('/users/product-add', productController.product);
 router.post('/product-add', productController.agregar);
 router.get('/search-results', productController.search);
 
