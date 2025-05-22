@@ -6,16 +6,12 @@
                     <img src="/images/rolex/logorolex3.jpg">
                 </a>
             </div>
-
-            
-            
             <div class="col-7 col-md-6">
                 <form action="/search-results" method="GET" class="search-form">
                     <input type="text" name="search" placeholder="Buscar productos, marcas y más" class="search-form_input">
                     <button type="submit" class="search-form_button"><i class="fas fa-search"></i></button>
                 </form>
             </div>
-            
             <div class="col-12 col-md-4">
                 <a class="main-header_credit-link">
                     <i class="fas fa-hand-holding-usd"></i>
@@ -37,13 +33,29 @@
             </ul>
     
             <ul class="right-navbar">
-                 <li><a href="/login">Login <i class="fas fa-user"></i></a>
-                </li>
-                <li>
-                    <form action="/register">
-                        <button class="logout" type="submit">Register <i class="fas fa-sign-in-alt"></i></button>
-                    </form>
-                </li> 
+                <% if (usuario) { %>
+                    <li>
+                        <span>¡Hola, <%= usuario.nombre_usuario %>!</span>
+                    </li>
+                    <li>
+                        <a href="/users/profile">Mi Perfil <i class="fas fa-user"></i></a>
+                    </li>
+                    <li>
+                        <a href="/users/logout">Logout <i class="fas fa-sign-out-alt"></i></a>
+                    </li>
+                    <li>
+                        <a href="/products/create">Agregar producto <i class="fas fa-plus"></i></a>
+                    </li>
+                <% } else { %>
+                    <li>
+                        <a href="/users/login">Login <i class="fas fa-user"></i></a>
+                    </li>
+                    <li>
+                        <form action="/users/register">
+                            <button class="logout" type="submit">Register <i class="fas fa-sign-in-alt"></i></button>
+                        </form>
+                    </li>
+                <% } %>
             </ul>
         </nav>
     </div>

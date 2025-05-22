@@ -21,7 +21,7 @@ const usersController = {
             res.redirect('/');
         });
     },
-
+//
     // Este método se encarga de procesar el registro del usuario
     // Verifica si el email y el nombre de usuario ya existen en la base de datos
     // Si no existen, lo crea en la base de datos
