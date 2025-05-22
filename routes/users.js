@@ -7,6 +7,7 @@ router.get('/profile', usersController.profile);
 
 router.get('/users/login', usersController.login);
 router.post('/login', usersController.procesarLogin);
+router.get('/users/prueba', usersController.prueba);
 
 router.get('/users/register', usersController.register);
 router.post("/register", usersController.create);

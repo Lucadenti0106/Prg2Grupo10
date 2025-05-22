@@ -9,16 +9,19 @@ let comentarios = producto.comentarios;
 const productController = {
     mostrarProducto: (req, res) => {
         const id = Number(req.params.id);
-        let producto = null;
-
-        for (let i = 0; i < modulo_datos.productos.length; i++) {
-            if (modulo_datos.productos[i].id === id) {
-                producto = modulo_datos.productos[i];
-                break;
-            }
-        }
-
-        res.render("product", { producto, comentarios });
+    
+        db.Product.findByPk(id)
+            .then(producto => {
+                if (!producto) {
+                    return res.status(404).send("Producto no encontrado");
+                }
+                
+                res.render("product", {
+                    producto: producto,
+                    comentarios: [], // A futuro podés traer comentarios reales
+                    usuario: req.session.usuario
+                });
+            })
     },
     product: (req, res) => {
 

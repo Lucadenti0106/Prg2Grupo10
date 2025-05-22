@@ -18,47 +18,54 @@
 	<!-- Header -->
 	<% if (usuario) { %>
 		<%- include('partials/headerlogueado') %>
-	<% } else { %>
-		<%- include('partials/header') %>
-	<% } %>
-	<!-- /Header -->
+			<% } else { %>
+				<%- include('partials/header') %>
+					<% } %>
+						<!-- /Header -->
 
-	<!-- Banner -->
-	<div class="banner">
-		<img src="../public/images/rolex/banner-rolex2.jpg" alt="">
-	</div>
-	<!-- /Banner -->
+						<!-- Banner -->
+						<div class="banner">
+							<img src="../public/images/rolex/banner-rolex2.jpg" alt="">
+						</div>
+						<!-- /Banner -->
 
-	<!-- Novedades -->
-	<div class="container products-wrapper">
-		<div class="row">
-			<div class="col-12">
-				<h2 class="products-title">Productos</h2>
-			</div>
-			<!-- Show the "ultimos" products -->
-			<!-- Dentro de <div class="row"> en index.ejs, donde van los productos -->
-			<% for(let i = 0; i < productos.length; i++) { %>
-					<% let producto = productos[i]; %>
-					<div class="col-12 col-sm-6 col-lg-3">
-						<section class="product-box">
-							<a href="/product/<%= producto.id %>">
-								<figure class="product-box_image">
-									<img src="<%= producto.imagen %>" alt="<%= producto.nombre_producto %>">
-								</figure>
-								<article class="product-box_data">
-									<h2><%= producto.nombre_producto %></h2>
-									<p>Comentarios: <%= producto.comentarios.length %></p>
-								</article>
-							</a>
-						</section>
-					</div>
-				<% } %>
-			
+						<!-- Novedades -->
+						<div class="container products-wrapper">
+							<div class="row">
+								<div class="col-12">
+									<h2 class="products-title">Productos</h2>
+								</div>
+								<!-- Show the "ultimos" products -->
+								<!-- Dentro de <div class="row"> en index.ejs, donde van los productos -->
+									
+								<% for(let i=0; i < productos.length; i++) { %>
+									<% let producto=productos[i]; %>
+										<div class="col-12 col-sm-6 col-lg-3">
+											<section class="product-box">
+												<a href="/product/<%= producto.id %>">
+													<figure class="product-box_image">
+														<img src="<%= producto.imagen_producto %>" alt="<%= producto.nombre_producto %>">
+
+													</figure>
+													<article class="product-box_data">
+														<h2>
+															<%= producto.nombre_producto %>
+														</h2>
+														<p>Comentarios:
+														</p>
+														
+													</article>
+												</a>
+											</section>
+										</div>
+										<% } %>
 
 
-	<!-- footer -->
-	<%- include('partials/footer') %>
-	<!-- /footer -->
+
+											<!-- footer -->
+											<%- include('partials/footer') %>
+												<!-- /footer -->
+												 
 </body>
 
 </html>

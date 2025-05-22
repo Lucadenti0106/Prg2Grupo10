@@ -9,6 +9,15 @@ const usersController = {
     register: (req, res) => {
         res.render("register", { error: null });
     },
+    prueba: (req, res) => {
+        db.Product.findAll()
+            .then(productos => {
+                res.send(productos);
+            })
+            .catch(error => {
+                res.send('Error: ' + error);
+            });
+    },
    
 
     // Este método se encarga de cerrar la sesión del usuario   
