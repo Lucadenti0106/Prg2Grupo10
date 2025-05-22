@@ -51,7 +51,8 @@ const usersController = {
                     contrasenia: contrasenia_encriptada,
                     fecha_nacimiento: req.body.fecha_nacimiento,
                     dni: req.body.dni,
-                    foto_perfil: req.body.foto_perfil
+                    foto_perfil: req.body.foto_perfil,
+                    productos_agregados: 0
                 });
             })
             .then(function () {
@@ -83,10 +84,11 @@ const usersController = {
                 }
                 //en esta parte de codigo va a guardar al usuario en la session
                 req.session.usuario = {
-                    id_usuario: usuario.id,
+                    id: usuario.id,
                     nombre_usuario: usuario.nombre_usuario,
                     email: usuario.email,
-                    foto_perfil: usuario.foto_perfil
+                    foto_perfil: usuario.foto_perfil,
+                    productos_agregados: usuario.productos_agregados
                 };
 
                 // en este bloque de codigo va a guardar al usuario en la cookie si presiono "recordarme"

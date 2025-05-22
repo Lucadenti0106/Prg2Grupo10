@@ -26,6 +26,13 @@ module.exports = function (sequelize, dataTypes){
         dni:{
             type: dataTypes.INTEGER
         },
+        productos_agregados:{
+
+            type: dataTypes.INTEGER,
+            allowNull: false
+
+
+        },
         foto_perfil:{
             type: dataTypes.STRING(255)
         },

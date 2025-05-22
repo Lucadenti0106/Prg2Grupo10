@@ -8,32 +8,52 @@ let comentarios = producto.comentarios;
 
 const productController = {
     mostrarProducto: (req, res) => {
-    const id = Number(req.params.id); 
-    let producto = null;
+        const id = Number(req.params.id);
+        let producto = null;
 
-    for (let i = 0; i < modulo_datos.productos.length; i++) {
-        if (modulo_datos.productos[i].id === id) {
-            producto = modulo_datos.productos[i];
-            break;
+        for (let i = 0; i < modulo_datos.productos.length; i++) {
+            if (modulo_datos.productos[i].id === id) {
+                producto = modulo_datos.productos[i];
+                break;
+            }
         }
-    }
 
         res.render("product", { producto, comentarios });
     },
-    agregar: (req, res) => {
-        if (req.session.usuario) {
-            db.Product.create({
-                //aca hay que crear toodos los productos y verificar que se agregue correctamente todos los datos, inclusive el id del usuario y todas las variables
-                
-        })
-            
-            res.send("Producto agergado exitosamente");
-            res.render("product-add")
+    product: (req, res) => {
+
+        if (!req.session.usuario) {
+            res.redirect("/login");
+
         } else {
-            res.render("product-add", {
-                error: "Solo los usuarios logueados pueden agregar productos",
-                usuario: req.session.usuario, 
-              });        }
+            res.render("product-add")
+
+        }
+
+    },
+    agregar: (req, res) => {
+        db.Product.create({
+            id_usuario: req.session.usuario.id,
+            imagen_producto: req.body.imagen,
+            nombre_producto: req.body.nombre_producto,
+            descripcion: req.body.descripcion
+        })
+        .then(() => {
+            return db.User.findOne({ where: { id: req.session.usuario.id } });
+        })
+        .then(usuario => {
+            let cantidad = Number(usuario.productos_agregados);
+            cantidad = cantidad + 1;
+    
+            return db.User.update(
+                { productos_agregados: cantidad },
+                { where: { id: req.session.usuario.id } }
+            );
+        })
+        .then(() => {
+            res.send("Producto agregado exitosamente");
+        })
+
     },
     search: (req, res) => {
         res.render("search-results", { productos: modulo_datos.productos });
