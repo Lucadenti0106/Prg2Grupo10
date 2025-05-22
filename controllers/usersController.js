@@ -3,11 +3,19 @@ let db = require('../database/models');
 let bcrypt = require('bcryptjs');
 
 const usersController = {
-    login: (req, res) => {
-        res.render("login", {error: null});
+    
+    login: function (req, res) {
+        if (req.session.usuario) {
+            return res.redirect('/users/profile');
+        }
+        return res.render('login', { error: null });
     },
-    register: (req, res) => {
-        res.render("register", { error: null });
+    
+    register: function (req, res) {
+        if (req.session.usuario) {
+            return res.redirect('/users/profile');
+        }
+        return res.render('register', { error: null });
     },
    
 
@@ -30,8 +38,20 @@ const usersController = {
     // Si hay un error en el proceso, muestra un mensaje de error
     // y vuelve a mostrar la vista de registro
     create: function (req, res) {
-        let email_usuario = req.body.email;
-        let nombre_usuario = req.body.usuario;
+        const email_usuario = req.body.email;
+        const nombre_usuario = req.body.usuario;
+        const dni_usuario = req.body.dni;
+        const foto_perfil_usuario = req.body.foto_perfil;
+        const fecha_nacimiento_usuario = req.body.fecha_nacimiento;
+        const contrasenia_usuario = req.body.contrasenia;
+
+        // Validaciones simples
+        if (!email_usuario) {
+            return res.render("register", { error: "El email es obligatorio." });
+        }
+        if (!contrasenia_usuario < 3) {
+            return res.render("register", { error: "La contraseña debe tener al menos 3 caracteres." });
+        }
 
         db.User.findOne({ where: { email: email_usuario } })
             .then(function (usuarioEmail) {
@@ -44,18 +64,24 @@ const usersController = {
                     return res.render("register", { error: "El nombre de usuario ya existe." });
                 }
 
-                let contrasenia_encriptada = bcrypt.hashSync(req.body.contrasenia, 10);
+                let contrasenia_encriptada = bcrypt.hashSync(contrasenia_usuario, 10);
                 return db.User.create({
-                    nombre_usuario: req.body.usuario,
-                    email: req.body.email,
+                    nombre_usuario: nombre_usuario,
+                    email: email_usuario,
                     contrasenia: contrasenia_encriptada,
-                    fecha_nacimiento: req.body.fecha_nacimiento,
-                    dni: req.body.dni,
-                    foto_perfil: req.body.foto_perfil
+                    fecha_nacimiento: fecha_nacimiento_usuario,
+                    dni: dni_usuario,
+                    foto_perfil: foto_perfil_usuario
                 });
             })
-            .then(function () {
-                res.redirect("/");
+            .then(function (user) {
+                req.session.usuario = {
+                    id_usuario: user.id,
+                    nombre_usuario: user.nombre_usuario,
+                    email: user.email,
+                    foto_perfil: user.foto_perfil
+                };
+                res.redirect("/user/profile");
             })
             .catch(function (error) {
                 console.error("Error en registro:", error);
@@ -93,7 +119,7 @@ const usersController = {
                 if (req.body.recordame) {
                     res.cookie("recordame", req.session.usuario, { maxAge: 1000 * 60 * 60 * 24 }); //maxage define cuanto tiempo dura la cookie
                 }
-                return res.redirect("/");
+                return res.redirect("/users/profile");
             })
             .catch(function (error) {
                 console.error("Error en el proceso de login:", error);
