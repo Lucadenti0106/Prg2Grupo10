@@ -35,22 +35,21 @@ module.exports = function (sequelize, dataTypes) {
     let config = {
         tableName: "comentarios",
         timestamps: true,
-        underscored: true
+        underscored: false
     };
 
     const Comentario = sequelize.define(alias, cols, config);
-
-    Comentario.associate = function(models) {
-        Comentario.belongsTo(models.User, {
-            foreignKey: 'id_usuario'
-        });
-    };
     
     Comentario.associate = function(models) {
+        Comentario.belongsTo(models.User, {
+            foreignKey: 'id_usuario',
+            as: 'usuario'
+        });
+    
         Comentario.belongsTo(models.Product, {
-            foreignKey: 'id_producto'
+            foreignKey: 'id_producto',
+            as: 'producto'
         });
     };
-
     return Comentario;
 };
