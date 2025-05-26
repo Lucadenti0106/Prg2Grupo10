@@ -10,7 +10,6 @@ const mainController = {
         })
         .catch(error => {
             console.log(error);
-            res.status(500).send('Error al cargar productos');
         });
 
         // Si querés dejar este comentario, debe estar dentro de una función o fuera del objeto
