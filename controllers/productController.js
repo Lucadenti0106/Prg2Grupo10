@@ -69,7 +69,22 @@ const productController = {
 
     },
     search: (req, res) => {
-        res.render("search-results", { productos: modulo_datos.productos });
+        let termino = req.query.nombre;
+
+        db.Product.findAll({
+            where: {
+                nombre_producto: { [db.Sequelize.Op.like]: `%${termino}%` }
+            },
+            include: [{ model: db.User, as: "usuario" }]
+        })
+        .then(productos => {
+            if (productos.length === 0) {
+                res.render("search-results", { productos: [], mensaje: "No hay resultados para su criterio de búsqueda" });
+            } else {
+                res.render("search-results", { productos: productos });
+            }
+        })
+        .catch(error => console.log(error));
     },
     comentar: (req, res) => {
         let usuario = req.session.usuario;

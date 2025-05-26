@@ -55,6 +55,9 @@ const usersController = {
                 if (usuarioEmail) {
                     return res.render("register", { error: "El email ya existe." });
                 }
+                if (!req.body.contrasenia || req.body.contrasenia.length < 3) {
+                return res.render("register", { error: "La contraseña debe tener al menos 3 caracteres." });
+            }
             })
             .then(function (usuarioName) {
                 if (usuarioName) {
@@ -122,10 +125,19 @@ const usersController = {
     
     // Este método se encarga de renderizar la vista de perfil del usuario
     profile: (req, res) => {
-        res.render("profile", {
-            usuario: moduloDatos.usuario,
-            productos: moduloDatos.productos
-        });
+        let usuario = req.session.usuario;
+
+        db.Product.findAll({
+            where: { id_usuario: usuario.id }
+        })
+        .then(productos => {
+            res.render("profile", {
+                usuario: usuario,
+                productos: productos,
+                cantidad: productos.length
+            });
+        })
+        .catch(error => console.log(error));
     }
 }
 
