@@ -30,8 +30,15 @@ const productController = {
                     producto: producto,
                     comentarios: producto.comentarios, // ahora sí
                     usuario: req.session.usuario
-                });
-            });
+                })
+
+        
+            })
+
+        .catch(error => {
+            console.log(error);
+        });
+   
     },
     product: (req, res) => {
 
@@ -66,6 +73,9 @@ const productController = {
             .then(() => {
                 res.send("Producto agregado exitosamente");
             })
+        .catch(error => {
+            console.log(error);
+        });
 
     },
     search: (req, res) => {
@@ -86,6 +96,9 @@ const productController = {
                 .then(() => {
                     res.redirect("/product/" + id_producto);
                 })
+                .catch(error => {
+                    console.log(error);
+                });
 
         }
     }
