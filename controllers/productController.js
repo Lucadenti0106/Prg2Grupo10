@@ -1,5 +1,6 @@
 const modulo_datos = require('../db/modulo_datos');
 let db = require('../database/models');
+const Op = db.Sequelize
 
 
 let producto = modulo_datos.productos[0];
@@ -73,28 +74,13 @@ const productController = {
             .then(() => {
                 res.send("Producto agregado exitosamente");
             })
-        .catch(error => {
-            console.log(error);
-        });
+            .catch(error => {
+                console.log(error);
+            });
 
     },
     search: (req, res) => {
-        let termino = req.query.nombre;
-
-        db.Product.findAll({
-            where: {
-                nombre_producto: { [db.Sequelize.Op.like]: `%${termino}%` }
-            },
-            include: [{ model: db.User, as: "usuario" }]
-        })
-        .then(productos => {
-            if (productos.length === 0) {
-                res.render("search-results", { productos: [], mensaje: "No hay resultados para su criterio de búsqueda" });
-            } else {
-                res.render("search-results", { productos: productos });
-            }
-        })
-        .catch(error => console.log(error));
+        res.render("login", {error: ""})
     },
     comentar: (req, res) => {
         let usuario = req.session.usuario;
@@ -109,7 +95,7 @@ const productController = {
                 id_usuario: usuario.id,
             })
                 .then(() => {
-                    res.redirect("/product/" + id_producto);
+                    res.redirect("/product/detalle/" + id_producto);
                 })
                 .catch(error => {
                     console.log(error);

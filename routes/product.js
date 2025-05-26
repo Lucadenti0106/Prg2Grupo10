@@ -3,8 +3,8 @@ var router = express.Router();
 const productController = require("../controllers/productController")
 
 /* GET home page. */
-router.get('/:id', productController.mostrarProducto);
-router.post('/:id/comentar', productController.comentar);
+router.get('/detalle/:id', productController.mostrarProducto);
+router.post('/detalle/:id/comentar', productController.comentar);
 
 router.get('/product-add', productController.product);
 router.post('/product-add', productController.agregar);
