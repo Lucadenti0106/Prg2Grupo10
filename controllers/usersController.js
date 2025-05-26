@@ -3,11 +3,19 @@ let db = require('../database/models');
 let bcrypt = require('bcryptjs');
 
 const usersController = {
-    login: (req, res) => {
-        res.render("login", {error: null});
+    login: function (req, res) {
+        
+        if (req.session.usuario) {
+            return res.redirect('/users/profile');
+        }
+        return res.render('login', { error: null });
     },
-    register: (req, res) => {
-        res.render("register", { error: null });
+    register: function (req, res) {
+        
+        if (req.session.usuario) {
+            return res.redirect('/users/profile');
+        }
+        return res.render('register', { error: null });
     },
     prueba: (req, res) => {
         db.Product.findAll()
