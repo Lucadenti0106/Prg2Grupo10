@@ -30,8 +30,8 @@ app.use((req, res, next) => {
 });
 
 app.use('/', indexRouter);
-app.use('/', usersRouter);
-app.use('/', productRouter);
+app.use('/users', usersRouter);
+app.use('/product', productRouter);
 
 app.use(function(req, res, next) {
   next(createError(404));

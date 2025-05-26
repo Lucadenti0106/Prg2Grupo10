@@ -8,7 +8,7 @@
             </div>
 
             <div class="col-7 col-md-6">
-                <form action="/search-results" method="GET" class="search-form">
+                <form action="/product/search-results" method="GET" class="search-form">
                     <input type="text" name="search" placeholder="Buscar productos, marcas y más" class="search-form_input">
                     <button type="submit" class="search-form_button"><i class="fas fa-search"></i></button>
                 </form>
@@ -29,18 +29,18 @@
         <nav class="main-navbar">
             <ul class="left-navbar">
                 <li><a href="/">Todos los productos</a></li>
-                <li><a href="/users/product-add">Cargar productos</a></li>
+                <li><a href="/product/product-add">Cargar productos</a></li>
             </ul>
 
             <ul class="right-navbar">
                 <% if (usuario) { %>
-                    <li><a href="/profile"><%= usuario.nombre_usuario %> <i class="fas fa-user"></i></a></li>                </li>
+                    <li><a href="/users/profile"><%= usuario.nombre_usuario %> <i class="fas fa-user"></i></a></li>                </li>
                 <% } else { %>
-                 <li><a href="/profile">Mi Perfil <i class="fas fa-user"></i></a>
+                 <li><a href="/users/profile">Mi Perfil <i class="fas fa-user"></i></a>
                 </li>
                 <% } %>
                 <li>
-                    <form action="/logout" method="post">
+                    <form action="/users/logout" method="post">
                         <button class="logout" type="submit">Cerrar sesion <i class="fas fa-sign-in-alt"></i></button>
                     </form>
                 </li>

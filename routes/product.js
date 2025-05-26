@@ -3,10 +3,10 @@ var router = express.Router();
 const productController = require("../controllers/productController")
 
 /* GET home page. */
-router.get('/product/:id', productController.mostrarProducto);
-router.post('/product/:id/comentar', productController.comentar);
+router.get('/:id', productController.mostrarProducto);
+router.post('/:id/comentar', productController.comentar);
 
-router.get('/users/product-add', productController.product);
+router.get('/product-add', productController.product);
 router.post('/product-add', productController.agregar);
 router.get('/search-results', productController.search);
 
