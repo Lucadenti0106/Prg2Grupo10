@@ -1,6 +1,6 @@
 const modulo_datos = require('../db/modulo_datos');
 let db = require('../database/models');
-const Op = db.Sequelize
+const Op = db.Sequelize.op
 
 
 let producto = modulo_datos.productos[0];
@@ -84,7 +84,27 @@ const productController = {
 
     },
     search: (req, res) => {
-        res.render("login", {error: ""})
+       let search = req.query.search;
+    
+        db.Product.findAll({
+            where: {
+                nombre_producto: {
+                    [Op.like]: `%${search}%`
+                }
+            },
+            include: [
+                { model: db.User, as: "usuario" },
+                { model: db.Comentario, as: "comentarios" }
+            ]
+        })
+        .then(productos => {
+            if (productos.length === 0) {
+                res.render("search-results", { productos: [], mensaje: "No hay resultados para su criterio de búsqueda" });
+            } else {
+                res.render("search-results", { productos, mensaje: null });
+            }
+        })
+        .catch(error => console.log(error));
     },
     comentar: (req, res) => {
         let usuario = req.session.usuario;
