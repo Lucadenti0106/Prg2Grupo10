@@ -53,6 +53,10 @@ const productController = {
 
     },
     agregar: (req, res) => {
+        if (!req.session.usuario) {
+
+        return res.redirect("/users/login");
+    }
         db.Product.create({
             id_usuario: req.session.usuario.id,
             imagen_producto: req.body.imagen,

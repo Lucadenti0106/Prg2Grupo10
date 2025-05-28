@@ -12,7 +12,7 @@ const mainController = {
             console.log(error);
         });
 
-        // Si querés dejar este comentario, debe estar dentro de una función o fuera del objeto
+        // tiene que estar dentro de una función o fuera del objeto
         // res.render("index", { productos: moduloDatos.productos }); 
     }
 };

@@ -45,6 +45,12 @@
 												<a href="/product/detalle/<%= producto.id %>">
 													<figure class="product-box_image">
 														<img src="<%= producto.imagen_producto %>" alt="<%= producto.nombre_producto %>">
+														<p>
+															Publicado por:
+															<a href="/users/profile/<%= producto.usuario.id %>">
+																<%= producto.usuario.nombre_usuario %>
+															</a>
+														</p>
 
 													</figure>
 													<article class="product-box_data">
@@ -62,10 +68,10 @@
 
 
 
-											<!-- footer -->
-											<%- include('partials/footer') %>
-												<!-- /footer -->
-												 
+	<!-- footer -->
+	<%- include('partials/footer') %>
+		<!-- /footer -->
+			
 </body>
 
 </html>

@@ -55,6 +55,15 @@ const usersController = {
                 if (usuarioEmail) {
                     return res.render("register", { error: "El email ya existe." });
                 }
+                if (!nombre_usuario) {
+                return res.render("register", { error: "El nombre de usuario es obligatorio." });
+                }
+                if (!email_usuario) {
+                return res.render("register", { error: "El email es obligatorio." });
+                }
+                if (!req.body.fecha_nacimiento) {
+                return res.render("register", { error: "La fecha de nacimiento es obligatoria." });
+                }
                 if (!req.body.contrasenia || req.body.contrasenia.length < 3) {
                 return res.render("register", { error: "La contraseña debe tener al menos 3 caracteres." });
             }
