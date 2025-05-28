@@ -42,7 +42,9 @@
 							<img src="<%= comentarios[i].usuario.foto_perfil %>" alt="Foto de <%= comentarios[i].usuario.nombre_usuario %>" width="35">
 							<div class="data">
 							  <p class="user">
-								<strong><%= comentarios[i].usuario.nombre_usuario %>:</strong>
+								<a href="/users/profile/<%= comentarios[i].usuario.id %>">
+									<strong><%= comentarios[i].usuario.nombre_usuario %></strong>
+								</a>
 								<%= comentarios[i].comentario %>
 							  </p>
 							</div>
