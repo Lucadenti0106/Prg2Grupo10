@@ -125,11 +125,19 @@ const usersController = {
                     res.cookie("recordame", req.session.usuario, { maxAge: 1000 * 60 * 60 * 24 }); //maxage define cuanto tiempo dura la cookie
                 }
                 return res.redirect("/");
+
+                
             })
+            
             .catch(function (error) {
                 console.error("Error en el proceso de login:", error);
                 res.render("login", { error: "Hubo un error al iniciar sesión." });
             });
+            
+            // Si el usuario no marca la casilla "recordarme", se elimina la cookie
+            if (!req.body.recordame) {
+            res.clearCookie("recordame");
+            }
     },
     
     // Este método se encarga de renderizar la vista de perfil del usuario
